@@ -1,4 +1,4 @@
-# Recycling Monitor
+# Europe Recycling
 
 An interactive 3D globe visualising municipal waste recycling rates across 32 countries, built with React, Three.js and [react-globe.gl](https://github.com/vasturiano/react-globe.gl).
 

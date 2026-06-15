@@ -38,7 +38,7 @@ export default function App() {
             letterSpacing: 0.5,
           }}
         >
-          Recycling Monitor
+          Europe Recycling Monitor
         </h1>
         <p style={{ margin: "4px 0 0", fontSize: 13, color: "#5577aa" }}>
           Recycling rates by country — click a point to explore

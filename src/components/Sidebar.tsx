@@ -26,15 +26,15 @@ function Bar({
           justifyContent: "space-between",
           marginBottom: 4,
           fontSize: 12,
-          color: "#aac8ff",
+          color: "#1D1128",
         }}
       >
         <span>{label}</span>
-        <span style={{ color: "#fff" }}>{value}%</span>
+        <span style={{ color: "#1D1128" }}>{value}%</span>
       </div>
       <div
         style={{
-          background: "rgba(255,255,255,0.08)",
+          background: "rgba(94,43,255,0.12)",
           borderRadius: 4,
           height: 6,
           overflow: "hidden",
@@ -60,8 +60,8 @@ function Rank({ country }: { country: CountryRecycling }) {
   );
   const rank = sorted.findIndex((c) => c.code === country.code) + 1;
   return (
-    <span style={{ color: "#aac8ff", fontSize: 13 }}>
-      Ranked <strong style={{ color: "#fff" }}>#{rank}</strong> of{" "}
+    <span style={{ color: "#1D1128", fontSize: 13 }}>
+      Ranked <strong style={{ color: "#1D1128" }}>#{rank}</strong> of{" "}
       {sorted.length} countries
     </span>
   );
@@ -80,11 +80,11 @@ export default function Sidebar({ selected, onClose }: Props) {
         right: 0,
         width: 320,
         height: "100vh",
-        background: "rgba(5,15,30,0.92)",
+        background: "#f7f6c5",
         backdropFilter: "blur(16px)",
-        borderLeft: "1px solid rgba(100,200,255,0.15)",
+        borderLeft: "1px solid rgba(94,43,255,0.25)",
         padding: "28px 24px",
-        color: "#fff",
+        color: "#1D1128",
         zIndex: 100,
         display: "flex",
         flexDirection: "column",
@@ -100,7 +100,7 @@ export default function Sidebar({ selected, onClose }: Props) {
           right: 16,
           background: "none",
           border: "none",
-          color: "#778899",
+          color: "#1D1128",
           cursor: "pointer",
           fontSize: 20,
           lineHeight: 1,
@@ -114,7 +114,7 @@ export default function Sidebar({ selected, onClose }: Props) {
         <div
           style={{
             fontSize: 11,
-            color: "#556677",
+            color: "#1D1128",
             textTransform: "uppercase",
             letterSpacing: 2,
             marginBottom: 6,
@@ -122,7 +122,7 @@ export default function Sidebar({ selected, onClose }: Props) {
         >
           Country Detail
         </div>
-        <h2 style={{ margin: 0, fontSize: 22, color: "#fff" }}>
+        <h2 style={{ margin: 0, fontSize: 22, color: "#1D1128" }}>
           {selected.country}
         </h2>
         <div style={{ marginTop: 4 }}>
@@ -132,8 +132,8 @@ export default function Sidebar({ selected, onClose }: Props) {
 
       <div
         style={{
-          background: "rgba(255,255,255,0.04)",
-          border: `1px solid ${color}44`,
+          background: "rgba(94,43,255,0.06)",
+          border: `1px solid ${color}66`,
           borderRadius: 12,
           padding: "18px 20px",
           marginBottom: 20,
@@ -143,7 +143,7 @@ export default function Sidebar({ selected, onClose }: Props) {
         <div
           style={{
             fontSize: 11,
-            color: "#778899",
+            color: "#1D1128",
             textTransform: "uppercase",
             letterSpacing: 2,
           }}
@@ -154,14 +154,14 @@ export default function Sidebar({ selected, onClose }: Props) {
           style={{
             fontSize: 52,
             fontWeight: 700,
-            color,
+            color: "#514F59",
             lineHeight: 1.1,
             margin: "8px 0 2px",
           }}
         >
           {selected.recyclingRate}%
         </div>
-        <div style={{ fontSize: 13, color: "#aac8ff" }}>
+        <div style={{ fontSize: 13, color: "#1D1128" }}>
           {selected.totalTonnes.toLocaleString()}k tonnes/year
         </div>
       </div>
@@ -170,7 +170,7 @@ export default function Sidebar({ selected, onClose }: Props) {
         <div
           style={{
             fontSize: 11,
-            color: "#556677",
+            color: "#1D1128",
             textTransform: "uppercase",
             letterSpacing: 2,
             marginBottom: 12,
@@ -178,19 +178,19 @@ export default function Sidebar({ selected, onClose }: Props) {
         >
           By Material
         </div>
-        <Bar label="Plastic" value={selected.plasticRate} color="#4488ff" />
+        <Bar label="Plastic" value={selected.plasticRate} color="#5e2bff" />
         <Bar
           label="Paper & Cardboard"
           value={selected.paperRate}
-          color="#88ccff"
+          color="#c04cfd"
         />
-        <Bar label="Glass" value={selected.glassRate} color="#44ffcc" />
+        <Bar label="Glass" value={selected.glassRate} color="#fc6dab" />
       </div>
 
       <div
         style={{
-          background: "rgba(255,255,255,0.03)",
-          border: "1px solid rgba(100,200,255,0.08)",
+          background: "rgba(94,43,255,0.06)",
+          border: "1px solid rgba(94,43,255,0.15)",
           borderRadius: 8,
           padding: "14px 14px",
           marginTop: "auto",
@@ -202,7 +202,7 @@ export default function Sidebar({ selected, onClose }: Props) {
         <div
           style={{
             fontSize: 11,
-            color: "#556677",
+            color: "#1D1128",
             textTransform: "uppercase",
             letterSpacing: 2,
           }}
@@ -215,7 +215,7 @@ export default function Sidebar({ selected, onClose }: Props) {
           rel="noreferrer"
           style={{
             fontSize: 12,
-            color: "#4499ff",
+            color: "#1D1128",
             lineHeight: 1.5,
             textDecoration: "none",
             wordBreak: "break-word",
@@ -227,17 +227,17 @@ export default function Sidebar({ selected, onClose }: Props) {
         >
           {selected.source} ↗
         </a>
-        <div style={{ fontSize: 11, color: "#445566" }}>
+        <div style={{ fontSize: 11, color: "#1D1128" }}>
           Reference year:{" "}
-          <strong style={{ color: "#667788" }}>{selected.year}</strong>
+          <strong style={{ color: "#1D1128" }}>{selected.year}</strong>
         </div>
         {selected.sourceNote && (
           <div
             style={{
               fontSize: 11,
-              color: "#556677",
+              color: "#1D1128",
               lineHeight: 1.6,
-              borderTop: "1px solid rgba(255,255,255,0.05)",
+              borderTop: "1px solid rgba(94,43,255,0.12)",
               paddingTop: 8,
               marginTop: 2,
             }}
