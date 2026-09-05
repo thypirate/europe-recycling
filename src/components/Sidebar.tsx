@@ -80,7 +80,7 @@ export default function Sidebar({ selected, onClose }: Props) {
         right: 0,
         width: 320,
         height: "100vh",
-        background: "#f7f6c5",
+        background: "#fff",
         backdropFilter: "blur(16px)",
         borderLeft: "1px solid rgba(94,43,255,0.25)",
         padding: "28px 24px",
@@ -133,7 +133,7 @@ export default function Sidebar({ selected, onClose }: Props) {
       <div
         style={{
           background: "rgba(94,43,255,0.06)",
-          border: `1px solid ${color}66`,
+          border: `1px solid ${color}`,
           borderRadius: 12,
           padding: "18px 20px",
           marginBottom: 20,
