@@ -5,7 +5,11 @@ import {
   getColor,
   type CountryRecycling,
 } from "../data/recycling";
-import { WasteTradeArcs, type GlobeArc } from "../data/wasteTrade";
+import {
+  WasteTradeArcs,
+  WasteTradeSource,
+  type GlobeArc,
+} from "../data/wasteTrade";
 
 interface GlobePoint {
   lat: number;
@@ -105,8 +109,13 @@ export default function Globe({
         arcDashGap={0.1}
         arcDashAnimateTime={2000}
         arcStroke={(d: object) =>
-          Math.max(0.2, Math.min(1.2, ((d as GlobeArc).tonnes_k ?? 50) / 400))
+          Math.max(0.2, Math.min(1.2, Math.sqrt((d as GlobeArc).tonnes / 1000) / 50))
         }
+        arcLabel={(d: object) => {
+          const a = d as GlobeArc;
+          const kt = (t: number) => `${Math.round(t / 1000).toLocaleString()} kt`;
+          return `<b>${a.label}</b>: ${kt(a.tonnes)}<br/>recovery ${kt(a.recoveryTonnes)} · disposal ${kt(a.disposalTonnes)}<br/><small>Eurostat ${WasteTradeSource.dataset}, ${WasteTradeSource.year}</small>`;
+        }}
         arcAltitudeAutoScale={0.3}
       />
 
